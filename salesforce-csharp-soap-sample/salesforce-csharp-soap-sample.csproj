@@ -1,0 +1,464 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{665D8710-7DB7-4AB7-9A4B-E777AD6697CE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>salesforce_csharp_soap_sample</RootNamespace>
+    <AssemblyName>salesforce-csharp-soap-sample</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Connected Services\sforce\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Connected Services\sforce\enterprise.wsdl" />
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.changeOwnPasswordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.ChangeOwnPasswordResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.convertLeadResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.createResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.DebuggingInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.deleteByExampleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.DeleteByExampleResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.deleteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.DeleteResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.describeAllTabsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.DescribeAppMenuItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.describeAppMenuResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.DescribeApprovalLayout.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.describeApprovalLayoutResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.DescribeAvailableQuickActionResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.describeAvailableQuickActionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.DescribeCompactLayout.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.describeCompactLayoutsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.DescribeCompactLayoutsResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.DescribeDataCategoryGroupResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.describeDataCategoryGroupsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.DescribeDataCategoryGroupStructureResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.describeDataCategoryGroupStructuresResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.DescribeDataCategoryMappingResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.describeDataCategoryMappingsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.describeGlobalResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.DescribeGlobalResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.DescribeGlobalTheme.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.describeGlobalThemeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.describeKnowledgeSettingsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.describeLayoutResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.DescribeLayoutResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.DescribeNounResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.describeNounsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.DescribePathAssistant.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.describePathAssistantsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.describePrimaryCompactLayoutsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.DescribeQuickActionResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.describeQuickActionsForRecordTypeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.describeQuickActionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.describeSearchableEntitiesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.DescribeSearchableEntityResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.DescribeSearchLayoutResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.describeSearchLayoutsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.describeSearchScopeOrderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.DescribeSearchScopeOrderResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.describeSObjectListViewsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.describeSObjectResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.DescribeSObjectResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.describeSObjectsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.describeSoftphoneLayoutResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.DescribeSoftphoneLayoutResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.DescribeSoqlListView.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.describeSoqlListViewsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.DescribeTab.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.DescribeTabSetResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.describeTabsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.DescribeThemeItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.describeThemeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.describeVisualForceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.DescribeVisualForceResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.emptyRecycleBinResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.EmptyRecycleBinResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.executeListViewResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.ExecuteListViewResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.findDuplicatesByIdsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.findDuplicatesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.FindDuplicatesResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.getDeletedResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.GetDeletedResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.getServerTimestampResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.GetServerTimestampResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.getUpdatedResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.GetUpdatedResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.getUserInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.GetUserInfoResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.invalidateSessionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.InvalidateSessionsResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.KnowledgeSettings.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.LeadConvertResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.LimitInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.loginResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.LoginResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.logoutResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.mergeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.MergeResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.PerformQuickActionResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.performQuickActionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.processResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.ProcessResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.queryAllResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.queryMoreResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.queryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.QueryResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.QuickActionTemplateResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.renderEmailTemplateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.RenderEmailTemplateResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.renderStoredEmailTemplateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.RenderStoredEmailTemplateResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.resetPasswordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.ResetPasswordResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.retrieveMassQuickActionTemplatesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.retrieveQuickActionTemplatesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.retrieveResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.SaveResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.searchResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.SearchResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.sendEmailMessageResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.sendEmailResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.SendEmailResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.setPasswordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.SetPasswordResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.sObject.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.undeleteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.UndeleteResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.updateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.upsertResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sforce\salesforce_csharp_soap_sample.sforce.UpsertResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="wsdl\enterprise.wsdl" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\sforce\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\sforce\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\sforce\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\sforce\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
